@@ -1,5 +1,5 @@
 <template>
-    <div class="row col-12">
+<div>
         <table id="persons">
             <tr>
                 <th>ID</th>
