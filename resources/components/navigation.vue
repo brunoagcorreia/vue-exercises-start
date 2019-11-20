@@ -1,10 +1,10 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
                 My first VueAPP
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -12,13 +12,16 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Persons</a>
+                        <router-link to="/" class="nav-link">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cars</a>
+                        <router-link to="/persons" class="nav-link">Persons</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Movies</a>
+                        <router-link to="/cars" class="nav-link">Cars</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/movies" class="nav-link">Movies</router-link>
                     </li>
                 </ul>
             </div>

@@ -1,16 +1,21 @@
 
 <template>
-    <div class="container">
-        <Navi></Navi>
-        <MyPersons />
-        <MyPersonDeatail />
+    <div class="row main">
+        <div class="container-fluid">
+            <Navigation />
+        </div>
+
     </div>
 </template>
 <script>
-    import MyPersons from "./components/persons/persons"
+
+    import Navigation from "./components/navigation"
+//    import MyPersons from "./components/persons/persons"
+//    import MyPerson from "./components/persons/person"
+
     export default {
         name: "App",
-        components: {MyPersons}
+        components: {Navigation}
     }
 </script>
 
