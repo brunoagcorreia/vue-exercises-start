@@ -22,14 +22,12 @@
         </tr>
         <tr>
             <td>Birstday</td>
-            <td v-html="person.dob"></td>
+            <td>{{ person.dob | toLocalDate }}</td>
         </tr>
         <tr>
             <td colspan="2">
                 <p class="txt">
-                    <transition name="fade" mode="out-in">
-                        <img class="avatar" :src="person.avatar" :alt="person.firstname" :title="person.firstname" />
-                    </transition>
+                    <img class="avatar" :src="person.avatar" :alt="person.firstname" :title="person.firstname" />
                     {{ person.text }}
                 </p>
             </td>
@@ -50,6 +48,7 @@
                     firstname: '',
                     lastname: '',
                     email: '',
+                    dob: '',
                     job: '',
                 }
             }
@@ -62,8 +61,13 @@
             } catch(err) {
             }
         },
+        filters: {
+            toLocalDate: function (val) {
+                return !!val ? (new Date(val)).toLocaleDateString(): "";
+            }
+        },
         beforeDestroy () {
-//            EventBus.$off('click-person');
+            EventBus.$off('click-person');
         }
     }
 </script>
@@ -75,11 +79,5 @@
     }
     .txt {
         text-align: justify;
-    }
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s
-    }
-    .fade-enter, .fade-leave-active {
-        opacity: 0
     }
 </style>

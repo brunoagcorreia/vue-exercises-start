@@ -1,5 +1,4 @@
 <template>
-    <div>
         <div class="card-body">
             <table id="persons">
                 <tr>
@@ -16,7 +15,6 @@
                 </tr>
             </table>
         </div>
-    </div>
 </template>
 
 <script>
