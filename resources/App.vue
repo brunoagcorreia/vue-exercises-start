@@ -2,9 +2,8 @@
 <template>
     <div class="container">
         <Navigation />
-        <br />
-        <transition name="fade">
-            <router-view></router-view>
+        <transition name="">
+        <router-view class="py-2"></router-view>
         </transition>
     </div>
 </template>
