@@ -1,13 +1,16 @@
 <template>
-    <div class="row">
+<div class="container">
+  <div class="row">
         <h5>Persons Page</h5>
-        <div class="col-6">
+        <div class="col">
             <MyPersons />
         </div>
-        <div class="col-6">
+        <div class="col">
             <MyPerson />
         </div>
     </div>
+</div>
+
 </template>
 
 <script>
