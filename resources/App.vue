@@ -1,10 +1,11 @@
 
 <template>
-    <div class="row main">
-        <div class="container-fluid">
-            <Navigation />
-        </div>
-
+    <div class="container">
+        <Navigation />
+        <br />
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 <script>
