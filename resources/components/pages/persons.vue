@@ -1,7 +1,7 @@
 <template>
 <div class="container">
+<h5>Persons Page</h5>
   <div class="row">
-        <h5>Persons Page</h5>
         <div class="col">
             <MyPersons />
         </div>
