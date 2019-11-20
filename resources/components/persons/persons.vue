@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import PersonsData from "../data/persons"
+    import PersonsData from "../../data/persons"
 
     export default {
         name: "MyPersons",

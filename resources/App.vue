@@ -1,11 +1,13 @@
 
 <template>
     <div class="container">
+        <Navi></Navi>
         <MyPersons />
+        <MyPersonDeatail />
     </div>
 </template>
 <script>
-    import MyPersons from "./components/persons"
+    import MyPersons from "./components/persons/persons"
     export default {
         name: "App",
         components: {MyPersons}
