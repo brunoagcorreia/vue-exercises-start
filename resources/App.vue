@@ -1,8 +1,16 @@
 
 <template>
     <div class="container">
+        <MyPersons />
     </div>
 </template>
+<script>
+    import MyPersons from "./components/persons"
+    export default {
+        name: "App",
+        components: {MyPersons}
+    }
+</script>
 
 <style>
     .fade-enter-active, .fade-leave-active {
@@ -12,10 +20,3 @@
         opacity: 0
     }
 </style>
-
-<script>
-
-    export default{
-        name: "App",
-    }
-</script>

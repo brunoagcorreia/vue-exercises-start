@@ -15,57 +15,8 @@
 </head>
 <body>
 
-<div id="app" class="row m-auto">
-    <div class="row col-12">
-        <span class="ml-2">{{msg}}</span>
-    </div>
-    <div class="row col-12">
-        <input type="text" v-model="msg">
-    </div>
-    <div class="row col-12">
-        <button class="btn btn-primary m-1" @click="increment">+</button>
-        <button class="btn btn-primary m-1" @click="decrement">-</button>
-    </div>
-    <div  class="row col-12"><p>Count: {{counter}}</p></div>
-    <div  class="row col-12"><p>Es is {{dateTime}}</p></div>
-</div>
+<div id="app"></div>
 
-<script>
-    var app = new Vue({
-    el: "#app",
-    data () {
-        return {
-            msg: "das ist ein Text",
-            counter: 0,
-            dateTime:'',
-            intervalID: null,
-        }
-    },
-
-    created(){
-        // todo: hier function aufrufen mit this. prefix
-        this.setDateTime(this)
-
-    },
-    methods: {
-        setDateTime (self) {
-            self.intervalID = window.setInterval(function() {
-                console.debug(this);
-                var date = new Date();
-                self.dateTime = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-            }, 1000)
-        },
-        increment(){
-            this.counter++;
-        },
-        decrement(){
-            this.counter--;
-        },
-    },
-    beforeDestroy () {
-        clearInterval(this.intervalID)
-    }
-});
-</script>
+<script src="js/vue.js"></script>
 </body>
 </html>
