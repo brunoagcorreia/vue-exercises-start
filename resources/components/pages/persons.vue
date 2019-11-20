@@ -1,24 +1,43 @@
 <template>
 <div class="container">
-<h5>Persons Page</h5>
-  <div class="row">
-        <div class="col">
-            <MyPersons />
+    <h5>Persons Page</h5>
+        <div class="paginator">
+            <jw-pagination
+                :items="PersonsData"
+                :pageSize="15"
+                @changePage="onChangePage"
+            />
         </div>
-        <div class="col">
-            <MyPerson />
+        <div class="clearfix p-0 m-0">
+            <div class="col-6 m-0 p-0 float-left">
+                <MyPersons :page-of-items="pageOfItems" />
+            </div>
+            <div class="col-6 m-0 p-0 float-right">
+                <MyPerson />
+            </div>
         </div>
     </div>
-</div>
-
 </template>
 
 <script>
+    import PersonsData from "../../data/persons"
     import MyPersons from "../persons/persons"
     import MyPerson from "../persons/person"
+    import JwPagination from "jw-vue-pagination"
 
     export default {
         name: "PersonsPage",
-        components: {MyPersons, MyPerson}
+        components: {MyPersons, MyPerson, JwPagination},
+        data () {
+            return {
+                PersonsData,
+                pageOfItems: []
+            }
+        },
+        methods: {
+            onChangePage(pageOfItems) {
+                this.pageOfItems = pageOfItems;
+            }
+        }
     }
 </script>

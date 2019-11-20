@@ -2,8 +2,8 @@
 <template>
     <div class="container">
         <Navigation />
-        <transition name="">
-        <router-view class="py-2"></router-view>
+        <transition name="fade" mode="out-in">
+            <router-view class="py-2"></router-view>
         </transition>
     </div>
 </template>

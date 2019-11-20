@@ -12,8 +12,18 @@ body {
 }
 
 .list {
-    border:1px solid red;
+  border:1px solid red;
 }
 .detail {
   border:1px solid green;
+}
+.paginator {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  float: left;
+  clear: both;
+}
+td, th {
+  padding: 0 0.2rem 0 0.2rem;
 }

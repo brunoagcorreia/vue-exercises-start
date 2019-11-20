@@ -50,3 +50,4 @@ const router = new VueRouter({ mode: 'history', routes: routes});
 
 import App from './App.vue';
 const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+export const EventBus = new Vue();
