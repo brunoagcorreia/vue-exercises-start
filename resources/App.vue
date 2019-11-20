@@ -11,8 +11,6 @@
 <script>
 
     import Navigation from "./components/navigation"
-//    import MyPersons from "./components/persons/persons"
-//    import MyPerson from "./components/persons/person"
 
     export default {
         name: "App",

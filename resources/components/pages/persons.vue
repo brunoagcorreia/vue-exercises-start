@@ -1,7 +1,7 @@
 <template>
-    <div class="col-12">
-        <h3>Persons Page</h3>
-        <div  class="col-6">
+    <div class="row">
+        <h5>Persons Page</h5>
+        <div class="col-6">
             <MyPersons />
         </div>
         <div class="col-6">
