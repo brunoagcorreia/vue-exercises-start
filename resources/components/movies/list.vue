@@ -5,14 +5,19 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Price</th>
+                    <th> </th>
                 </tr>
-                <tr v-for="item in movies">
-                    <td>{{ item.id }}</td>
+                <tr v-for="(item, index) in movies">
+                    <td>{{index}} {{ item.id }}</td>
                     <td class="link"
                         data-toggle="modal"
                         @click="clickHandler(item)"
                     >{{ item.title }}</td>
                     <td>{{ item.price }}</td>
+                    <td><button
+                         class="btn-sm btn-danger"
+                         @click="remove(index)"
+                    >DELETE</button></td>
                 </tr>
             </table>
         </div>
@@ -33,6 +38,18 @@
             this.getList()
         },
         methods: {
+            remove(index) {
+                let movie = this.movies[index];
+                let url = `/api/movie/` + movie.id;
+                this.axios
+                    .delete(url)
+                    .then((response) => {
+                        this.movies.splice(index, 1);
+                    })
+                    .catch(err => {
+                        console.error(url + ": " + err);
+                    });
+            },
             getList() {
                 let url = `/api/movie`;
                 this.axios
