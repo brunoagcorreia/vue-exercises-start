@@ -9,12 +9,13 @@
             />
         </div>
         <div class="clearfix p-0 m-0">
-            <div class="col-6 m-0 p-0 float-left">
+            <div class="col-12 m-0 p-0 float-left">
                 <MyPersons :page-of-items="pageOfItems" />
             </div>
-            <div class="col-6 m-0 p-0 float-right">
+            <MyPersonModal />
+            <!--div class="col-6 m-0 p-0 float-right">
                 <MyPerson />
-            </div>
+            </div-->
         </div>
     </div>
 </template>
@@ -22,12 +23,13 @@
 <script>
     import PersonsData from "../../data/persons"
     import MyPersons from "../persons/persons"
-    import MyPerson from "../persons/person"
+//    import MyPerson from "../persons/person"
+    import MyPersonModal from "../persons/person-modal"
     import JwPagination from "jw-vue-pagination"
 
     export default {
         name: "PersonsPage",
-        components: {MyPersons, MyPerson, JwPagination},
+        components: {MyPersons, MyPersonModal, JwPagination},
         data () {
             return {
                 PersonsData,

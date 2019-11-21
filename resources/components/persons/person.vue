@@ -32,7 +32,6 @@
                 </p>
             </td>
         </tr>
-
     </table>
 </template>
 

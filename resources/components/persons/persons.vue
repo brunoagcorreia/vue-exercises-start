@@ -9,6 +9,7 @@
                 <tr v-for="item in pageOfItems">
                     <td>{{ item.id }}</td>
                     <td class="link"
+                        data-toggle="modal"
                         @click="clickHandler(item)"
                     >{{ item.firstname }} {{ item.lastname }}</td>
                     <td>{{ item.email }}</td>
@@ -27,6 +28,7 @@
             clickHandler(item) {
                 // Send the event on a channel (click-person) with a payload (person object.)
                 EventBus.$emit('click-person', item);
+                $("#myModal").modal();
             },
         }
     }
