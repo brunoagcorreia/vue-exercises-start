@@ -1,6 +1,6 @@
 <template>
-<div class="container">
-    <h5>Persons Page</h5>
+    <div class="container">
+        <h5>Persons Page</h5>
         <div class="paginator">
             <jw-pagination
                 :items="PersonsData"
@@ -13,9 +13,6 @@
                 <MyPersons :page-of-items="pageOfItems" />
             </div>
             <MyPersonModal />
-            <!--div class="col-6 m-0 p-0 float-right">
-                <MyPerson />
-            </div-->
         </div>
     </div>
 </template>
@@ -23,7 +20,6 @@
 <script>
     import PersonsData from "../../data/persons"
     import MyPersons from "../persons/persons"
-//    import MyPerson from "../persons/person"
     import MyPersonModal from "../persons/person-modal"
     import JwPagination from "jw-vue-pagination"
 

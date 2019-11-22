@@ -1,6 +1,6 @@
 <template>
         <div class="card-body">
-            <table id="persons">
+            <table id="persons" class="table table-striped col-12">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -8,7 +8,8 @@
                 </tr>
                 <tr v-for="item in pageOfItems">
                     <td>{{ item.id }}</td>
-                    <td class="link"
+                    <td
+                        class="link"
                         data-toggle="modal"
                         @click="clickHandler(item)"
                     >{{ item.firstname }} {{ item.lastname }}</td>

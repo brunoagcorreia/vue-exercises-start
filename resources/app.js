@@ -7,11 +7,13 @@ window.axios.defaults.baseURL = 'http://videostore.loc';
 
 window.axios.defaults = {
     ...window.axios.defaults,
+    baseURL: 'http://videostore.loc',
     timeout: 5000,
     responseType: 'json',
     withCredentials: false,
-    maxRedirects: 5,
 };
+//window.apiURL = 'http://bta-videostore.loc';
+
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 

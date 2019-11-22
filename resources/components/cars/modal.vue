@@ -7,7 +7,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">
-                        <span v-html="movie.title"></span>
+                        <span v-html="car.model"></span>
                     </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
@@ -17,15 +17,15 @@
                     <table class="table">
                         <tr>
                             <td>ID</td>
-                            <td v-html="movie.id"></td>
+                            <td v-html="car.id"></td>
                         </tr>
                         <tr>
-                            <td>Author</td>
-                            <td v-html="movie.author.fullname"></td>
+                            <td>Color</td>
+                            <td v-html="car.color"></td>
                         </tr>
                         <tr>
-                            <td>Price</td>
-                            <td v-html="movie.price"></td>
+                            <td>Quantity</td>
+                            <td v-html="car.quantity"></td>
                         </tr>
                     </table>
                 </div>
@@ -44,30 +44,28 @@
     import {EventBus} from "../../app";
 
     export default {
-        name: "MyMovieModal",
+        name: "MyCarModal",
         data() {
             return {
-                movie: {
+                car: {
                     id: '',
-                    title: '',
-                    price: '',
-                    author: {
-                        fullname: '',
-                    }
+                    model: '',
+                    color: '',
+                    quantity: 0,
                 }
             }
         },
         mounted() {
             try {
-                EventBus.$on('click-movie', item => {
-                    this.movie = item;
+                EventBus.$on('click-car', item => {
+                    this.car = item;
                 });
             } catch(err) {
                 console.error(err)
             }
         },
         beforeDestroy () {
-            EventBus.$off('click-movie');
+            EventBus.$off('click-car');
         }
     }
 </script>
